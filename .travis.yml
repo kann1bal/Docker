@@ -14,7 +14,7 @@ after_success:
   - docker build -t kann1bal/server  ./server
   - docker build -t kann1bal/worker  ./worker 
   - echo "$Docker_Password" | docker login -u "$Docker_ID" --password-stdin
-  - docker build -t kann1bal/client ./client 
-  - docker build -t kann1bal/nginx ./client 
-  - docker build -t kann1bal/server ./server  
-  - docker build -t kann1bal/worker ./worker 
+  - docker push -t kann1bal/client 
+  - docker push -t kann1bal/nginx
+  - docker push -t kann1bal/server
+  - docker push -t kann1bal/worker
