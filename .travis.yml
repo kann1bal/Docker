@@ -12,12 +12,7 @@ after_install:
   - docker build -t kann1bal/client  ./client
   - docker build -t kann1bal/nginx  ./nginx
   - docker build -t kann1bal/server  ./server
-  - docker build -t kann1bal/worker  ./
+  - docker build -t kann1bal/worker  ./worker
   
 
-  echo "$Docker_password" | docker login -u "$Docker_ID" --password-stdn
-
-docker push kann1bal/client
-docker push kann1bal/nginx 
-docker push kann1bal/server 
-docker push kann1bal/worker 
+  
