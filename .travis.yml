@@ -11,8 +11,3 @@ after-success:
 echo "$Docker_password" | docker login -u "$Docker_ID" --password-stdn
 
 
-#pushh images 
-docker push kann1bal/client
-docker push kann1bal/nginx 
-docker push kann1bal/server 
-docker push kann1bal/worker 
