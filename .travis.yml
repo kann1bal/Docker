@@ -1,10 +1,6 @@
 sudo: required 
 services:
   - docker
-after-success:
-  - docker build -t kann1bal/client ./client .
-  - docker build -t kann1bal/nginx ./client .
-  - docker build -t kann1bal/server ./client .
-  - docker build -t kann1bal/worker ./client .
+
 
 
