@@ -1,12 +1,18 @@
 sudo: required 
 services:
   - docker
-before_install:
-  - docker build -t kann1bal/react-test -f ./client/Dockerfile.dev ./client
-
 after-success:
   - docker build -t kann1bal/client ./client .
   - docker build -t kann1bal/nginx ./client .
   - docker build -t kann1bal/server ./client .
   - docker build -t kann1bal/worker ./client .
 
+#log in docker cli 
+echo "$Docker_password" | docker login -u "$Docker_ID" --password-stdn
+
+
+#pushh images 
+docker push kann1bal/client
+docker push kann1bal/nginx 
+docker push kann1bal/server 
+docker push kann1bal/worker 
