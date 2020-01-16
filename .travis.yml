@@ -7,7 +7,4 @@ after-success:
   - docker build -t kann1bal/server ./client .
   - docker build -t kann1bal/worker ./client .
 
-#log in docker cli 
-echo "$Docker_password" | docker login -u "$Docker_ID" --password-stdn
-
 
