@@ -1,6 +1,6 @@
-sudo: required 
-services:
-  - docker
-
+language: ruby
+rvm:
+ - 2.2
+ - jruby
 
 
