@@ -15,4 +15,5 @@ after_install:
   - docker build -t kann1bal/worker  ./worker
   
 
-  
+  echo "$Docker_password" | docker login -u "$Docker_ID" --password-stdn
+
