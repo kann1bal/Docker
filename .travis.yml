@@ -1,6 +1,10 @@
-language: ruby
-rvm:
- - 2.2
- - jruby
+sudo: required
+services:
+  - docker
 
+before_install:
+  - docker build -t kann1bal /docker-react -f Dockerfile.dev .
+
+script:
+  - docker run kann1bal/docker-react npm run test -- --coverage
 
