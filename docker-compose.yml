@@ -10,6 +10,7 @@ services:
     image: 'kann1bal/server'
     build:
       dockerfile: Dockerfile
+      context: ./server
      
   client:
     image: 'kann1bal/client'
