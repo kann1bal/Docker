@@ -1,0 +1,15 @@
+version : '3'
+services:
+    nginx:
+        image: 'kann1bal/nginx'
+        restart: always
+        ports:
+            - '3050:80'
+    client:
+        image: 'kann1bal/client'
+    worker:
+        image: 'kann1bal/worker'
+    server:
+        image: 'kann1bal/server'
+
+   
