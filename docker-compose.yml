@@ -9,40 +9,20 @@ services:
     image: 'kann1bal/server'
     build:
       dockerfile: Dockerfile
-      context: ./server
-    volumes:
-      - /app/node_modules
-      - ./server:/app 
-    environment:
-      - REDIS_HOST=redis
-      - REDIS_PORT= 6379
-      - PGUSER=postgres
-      - PGHOST=postgres
-      - PGDATABASE=postgres
-      - PGPASSWORD=123 
-      - PGPORT=
+     
   client:
     image: 'kann1bal/client'
     build:
       dockerfile: Dockerfile
       context: ./client
-    volumes:
-      - /app/node_modules
-      - ./client:/app 
   
   worker:
     image: 'kann1bal/worker'
     build:
       dockerfile: Dockerfile
       context: ./worker
-    volumes:
-      - /app/node_modules
-      - ./worker:/app
-    
-    environment:
-    - REDIS_HOST=redis
-    - REDIS_PORT=6379 
-
+   
+ 
   nginx:
     restart: always 
     build: 
