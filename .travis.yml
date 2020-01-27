@@ -9,7 +9,6 @@ script:
   - docker run kann1bal/docker-react npm run test -- --coverage
 
 after_success:
-  # - docker-compose up --build
   - docker build -t kann1bal/client  ./client
   - docker build -t kann1bal/nginx  ./nginx
   - docker build -t kann1bal/server  ./server
